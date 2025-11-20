@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  dillan:
+    image: 
+    deploy:
+      labels:
+        - "traefik.enable=true"
+        - "traefik.http.routers.dillan.entrypoints=http"
+        - "traefik.http.routers.dillan.rule=Host(`dillan.byronrm.com`)"
+        - "traefik.http.middlewares.dillan-https-redirect.redirectscheme.scheme=https"
+        - "traefik.http.routers.dillan.middlewares=dillan-https-redirect"
+        - "traefik.http.routers.dillan-secure.entrypoints=https"
+        - "traefik.http.routers.dillan-secure.rule=Host(`dillan.byronrm.com`)"
+        - "traefik.http.routers.dillan-secure.tls=true"
+        - "traefik.http.routers.dillan-secure.tls.certresolver=http"
+        - "traefik.http.routers.dillan-secure.service=dillan"
+        - "traefik.http.services.dillan.loadbalancer.server.port=5000"
+        - "traefik.docker.network=traefik-public"
+    networks:
+      - traefik-public
+
+networks:
+  traefik-public:
+    exterdillan: true
