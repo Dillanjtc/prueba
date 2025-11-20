@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   dillan:
-    image: 
+    image: ghcr.io/dillanjtc/prueba:1.0.0
     deploy:
       labels:
         - "traefik.enable=true"
