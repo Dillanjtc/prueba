@@ -47,7 +47,7 @@ def hello():
         <h1>Saludos a todos desde Python 🐍</h1>
         
         <!-- Aquí está el GIF del gato (Gato asintiendo / Vibing Cat) -->
-        <img src="https://media1.tenor.com/m/bCcpR0Jp4sIAAAAC/cat-dance.gif" alt="Meme de gato bailando">
+        <img src="https://media.tenor.com/5BYK-WS0__gAAAAM/cool-fun.gif" alt="Meme de gato bailando">
         
         <div class="footer">Servidor corriendo en Flask</div>
     </body>
